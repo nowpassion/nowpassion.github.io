@@ -8,6 +8,6 @@ gem 'jekyll-feed'
 gem 'jekyll-readme-index'
 gem 'jemoji'
 gem 'webrick'
-gem 'faraday-retry'
+gem 'faraday_middleware-request-retry', '~> 0.2.0'
 
 # gem "rails"
