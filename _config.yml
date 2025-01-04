@@ -1,8 +1,8 @@
 # Configurations
-title:            Jekyll Gitbook
-longtitle:        Jekyll Gitbook
-author:           HE Tao
-email:            sighingnow@gmail.com
+title:            nowpassion's blog
+longtitle:        nowpassion's blog
+author:           nowpassion
+email:            
 description: >
   Build Jekyll site with the GitBook style.
 
@@ -62,7 +62,7 @@ ordered_collections:
   - pages
   - others
 
-page_width: 800px
+page_width: 1200px
 
 destination:      ./_site
 incremental:      false
