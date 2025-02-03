@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/e7086ef6-da3f-498f-81d4-973a0446d8cc)---
+---
 title: Linux Kernel Linked List
 author: nowpassion
 date: 2025-01-13
