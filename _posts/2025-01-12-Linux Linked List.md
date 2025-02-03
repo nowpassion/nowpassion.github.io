@@ -106,8 +106,8 @@ mermaid: true
   							 struct ww_acquire_ctx *ctx)
   {
   	// XXX
-  	// lock과 base의 형이 같기 때문에 struct mutex크기를 가지고 있는 lock 에서
-  	// ww_mutex.base 주소 (struct mutex) 만큼을 빼면 ww_mutex의 첫 주소가 계산될 것임.
+  	// lock과 base의 형이 같기 때문에 struct mutex lock 주소에서
+  	// ww_mutex.base 주소 (struct mutex) 만큼을 빼면 ww의 첫 주소가 계산될 것임.
   	struct ww_mutex *ww = container_of(lock, struct ww_mutex, base);
   	...
   }
