@@ -17,7 +17,8 @@ mermaid: true
   ```
   * Linked List로 연결할 데이터 내에 struct list_head를 선언하여 이를 연결한다.
   <br />
-  ![DLL](/assets/dll.png)
+  <img src="/assets/dll.png" width="400">
+  
   * next는 다음 next를 가리키며, prev는 이전의 next를 가리킨다.(next는 Linked List의 첫 포인터 주소이기 때문이다.)
 * 그래서 이를 사용하기 위해서는 아래와 같이 선언하여 사용함. (skbuff.h 의 일부)
   * sk_buff 구조체는 list_head list가 선언되어 있어 연결 리스트로 구성되어 있을 수 있음을 아래 코드에서 확인할 수 있음.
