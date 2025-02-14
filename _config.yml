@@ -1,74 +1,41 @@
-# Configurations
-title:            nowpassion's blog
-longtitle:        nowpassion's blog
-author:           nowpassion
-email:            
-description: >
-  Build Jekyll site with the GitBook style.
+# Site settings
+title:          Tale
+description:    "Minimal Jekyll theme for storytellers"
+baseurl:        "/tale"
+url:            "https://chesterhow.github.io"
 
-version:          1.0
-gitbook_version:  3.2.3
+# Google Analytics
+google_analytics: UA—XXXXXXXX-X
 
-url:              'https://sighingnow.github.io'
-baseurl:          '/jekyll-gitbook'
-rss:              RSS
+# Author
+author:
+  name:         Chester How
+  url:          https://chester.how
+  email:        chesterhow@gmail.com
 
-# bootstrap: use the remote theme for the site itself
-remote_theme: sighingnow/jekyll-gitbook
+# Build settings
+markdown:       kramdown
+include:
+  - _pages
 
-toc:
-  enabled: true
-  h_min:   1
-  h_max:   3
+# Assets
+sass:
+  sass_dir:     _sass
+  style:        compressed
 
-# customize the link favicon in header, will be {{site.baseurl}}/{{site.favicon_path}}
-favicon_path:     /assets/gitbook/images/favicon.ico
-
-# markdown render engine.
-markdown:         kramdown
-kramdown:
-  auto_ids:               true
-  input:                  GFM
-  math_engine:            mathjax
-  smart_quotes:           lsquo,rsquo,ldquo,rdquo
-  toc_levels:             1..6
-  syntax_highlighter:     rouge
-  syntax_highlighter_opts:
-    guess_lang:           true
-
-syntax_highlighter_style: thankful_eyes
-
-markdown_ext:             markdown,mkdown,mkdn,mkd,md
-
-# Permalinks
-permalink:                /:categories/:year-:month-:day-:title:output_ext
-
-# Disqus comments
-# disqushandler:            sighingnow
-
-exclude:
-  - _drafts
-
-collections:
-  pages:
-    output: true
-    permalink: /:collection/:path/
-  others:
-    output: true
-    permalink: /:collection/:path/
-
-ordered_collections:
-  - posts
-  - pages
-  - others
-
-page_width: 1200px
-
-destination:      ./_site
-incremental:      false
-regenerate:       true
-
+# Gems
 plugins:
   - jekyll-feed
-  - jekyll-readme-index
-  - jemoji
+  - jekyll-paginate
+  - jekyll-seo-tag
+  # - jemoji #Uncomment this to allow emoji in your post
+
+# Permalinks
+permalink:      /:year-:month-:day/:title
+paginate:       5
+
+# Excludes
+exclude: [ Gemfile, Gemfile.lock, tale.gemspec ]
+
+# Disqus (Set to your disqus id)
+disqus:         jekyll-tale
