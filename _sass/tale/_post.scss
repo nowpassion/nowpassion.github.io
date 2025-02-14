@@ -60,4 +60,65 @@
     padding: 0;
     margin: 0;
   }
+    
+  /* 마크다운 리스트 들여쓰기 간격 조정 */
+  ul, ol {
+    padding-left: 10px; /* 기본 패딩 값보다 작은 값으로 조정 */
+    margin-left: 10px; /* 기본 마진 값보다 작은 값으로 조정 */
+  }
+
+  ul ul, ol ol {
+    padding-left: 10px; /* 중첩된 리스트의 패딩 값 조정 */
+    margin-left: 10px; /* 중첩된 리스트의 마진 값 조정 */
+  }
+
+  //ToC
+  .content {
+    display: flex;
+    margin: 20px;
+  }
+  
+  .content.no-toc {
+    display: block;
+  }
+
+  .post_main {
+    flex: 3;
+    max-width: 100%; /* 본문 너비를 제한 */
+  }
+  
+  .sidebar {
+    flex: 1;
+    margin-left: 40px;
+  }
+
+  .toc {
+    width: max-content;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 10px;
+    position: sticky;
+    top: 20px; /* 스크롤 시 상단에서 20px 위치에 고정 */
+  }
+
+  /* 모바일 환경에서 TOC 숨기기 */
+  @media screen and (max-width: 768px) {
+    .toc {
+      display: none;
+    }
+
+    .content {
+      flex-direction: column;
+    }
+
+    .main {
+      width: 100%;
+      max-width: 100%; /* 모바일 환경에서 본문 너비를 브라우저 폭에 맞춤 */
+      margin: 0;
+    }
+
+    .sidebar {
+      margin: 0;
+    }
+  }
 }

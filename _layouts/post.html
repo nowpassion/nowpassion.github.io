@@ -20,7 +20,23 @@ layout: default
   <h1 class="post-title">{{ page.title }}</h1>
   <div class="post-line"></div>
 
-  {{ content }}
+  <div class="content {% unless page.toc %}no-toc{% endunless %}">
+
+    <div class="post_main">
+      {{ content }}
+    </div>
+
+    <div class="sidebar">
+      {% if page.toc %}
+        <nav class="toc">
+          <h3>Table of Contents</h3>
+          {% toc %} 
+        </nav>
+      {% endif %}
+    </div>
+
+  </div>
+  
 </div>
 
 {% if page.comments %}
