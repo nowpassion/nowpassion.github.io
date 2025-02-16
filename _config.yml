@@ -1,17 +1,17 @@
 # Site settings
-title:          Tale
-description:    "Minimal Jekyll theme for storytellers"
+title:          Nowpassion's blog
+description:    "Nowpassion Stuby Blog"
 baseurl:        "/tale"
-url:            "https://chesterhow.github.io"
+url:            "https://nowpassion.github.io"
 
 # Google Analytics
 google_analytics: UA—XXXXXXXX-X
 
 # Author
 author:
-  name:         Chester How
-  url:          https://chester.how
-  email:        chesterhow@gmail.com
+  name:         Nowpassion
+  url:          https://nowpassion.github.io
+  email:        
 
 # Build settings
 markdown:       kramdown
