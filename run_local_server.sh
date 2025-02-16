@@ -15,7 +15,12 @@ start_program() {
         echo "프로그램이 이미 실행 중입니다."
     else
 		$PROGRAM_NAME serve -t --watch -H 192.168.174.10 -b "" -B
-        echo "프로그램을 시작합니다."
+		if [ $? -eq 0 ];
+		then
+        	echo "프로그램을 시작합니다."
+		else
+			echo "프로그램을 시작하는데 실패했습니다."
+		fi
     fi
 }
 
