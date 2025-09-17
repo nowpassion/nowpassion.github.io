@@ -5,3 +5,7 @@
 _site
 Gemfile.lock
 .jekyll-cache
+
+# Temporary test files
+/tmp/
+toc-test.html

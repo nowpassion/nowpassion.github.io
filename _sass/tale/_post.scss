@@ -99,6 +99,70 @@
     padding: 10px;
     position: sticky;
     top: 20px; /* 스크롤 시 상단에서 20px 위치에 고정 */
+    
+    /* Collapsible ToC styles */
+    .toc-item {
+      position: relative;
+      
+      .toc-toggle {
+        display: inline-block;
+        width: 16px;
+        height: 16px;
+        line-height: 16px;
+        text-align: center;
+        font-size: 12px;
+        font-weight: bold;
+        color: #666;
+        cursor: pointer;
+        margin-left: 5px;
+        border: 1px solid #ccc;
+        border-radius: 2px;
+        background-color: #fff;
+        transition: all 0.2s ease;
+        user-select: none;
+        
+        &:hover {
+          background-color: #e9e9e9;
+          border-color: #999;
+        }
+        
+        &:focus {
+          outline: 2px solid #007cba;
+          outline-offset: 1px;
+        }
+      }
+    }
+    
+    .toc-sublist {
+      margin-left: 15px;
+      margin-top: 5px;
+      transition: all 0.3s ease;
+      overflow: hidden;
+      
+      &.collapsed {
+        max-height: 0;
+        margin-top: 0;
+        margin-bottom: 0;
+        opacity: 0;
+      }
+      
+      &:not(.collapsed) {
+        max-height: 500px; /* Adjust based on expected content */
+        opacity: 1;
+      }
+    }
+    
+    .toc-link {
+      display: inline-block;
+      text-decoration: none;
+      color: #333;
+      padding: 2px 0;
+      
+      &:hover {
+        color: #007cba;
+        text-decoration: underline;
+      }
+    }
   }
 
   /* 모바일 환경에서 TOC 숨기기 */
