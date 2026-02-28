@@ -20,27 +20,21 @@ layout: default
   <h1 class="post-title">{{ page.title }}</h1>
   <div class="post-line"></div>
 
-  <div class="content {% unless page.toc %}no-toc{% endunless %}">
-
-    <div class="post_main">
-      {{ content }}
-    </div>
-
-    <div class="sidebar">
-      {% if page.toc %}
-        <nav class="toc" data-toc-depth="{{ page.toc_depth | default: 6 }}">
-          <div class="toc-header">
-            <h3>목차</h3>
-            <button class="toc-toggle" aria-label="목차 접기">▲</button>
-          </div>
-          <div class="toc-body">
-            {% toc %}
-          </div>
-        </nav>
-      {% endif %}
-    </div>
-
+  <div class="content">
+    {{ content }}
   </div>
+
+  {% if page.toc %}
+    <nav class="toc" data-toc-depth="{{ page.toc_depth | default: 6 }}">
+      <div class="toc-header">
+        <h3>목차</h3>
+        <button class="toc-toggle" aria-label="목차 접기">▲</button>
+      </div>
+      <div class="toc-body">
+        {% toc %}
+      </div>
+    </nav>
+  {% endif %}
   
 </div>
 

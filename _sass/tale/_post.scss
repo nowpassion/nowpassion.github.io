@@ -72,38 +72,24 @@
     margin-left: 10px; /* 중첩된 리스트의 마진 값 조정 */
   }
 
-  //ToC
-  .content {
-    display: flex;
-    margin: 20px;
-  }
-  
-  .content.no-toc {
-    display: block;
-  }
-
-  .post_main {
-    flex: 1 1 auto;
-    min-width: 0; /* 본문이 flex 컨테이너 밖으로 넘치지 않도록 방지 */
-    overflow-x: auto;
-  }
-  
-  .sidebar {
-    flex: 0 0 auto;
-    width: 260px;
-    margin-left: 40px;
-  }
-
+  //ToC: div.content 외부의 고정 위치 독립 패널
   .toc {
-    max-width: 260px;
+    position: fixed;
+    right: 20px;
+    top: 80px;
+    width: 260px;
     background-color: #f9f9f9;
     border: 1px solid #ddd;
     padding: 10px;
-    position: sticky;
-    top: 20px; /* 스크롤 시 상단에서 20px 위치에 고정 */
     box-sizing: border-box;
     overflow-y: auto;
-    max-height: calc(100vh - 40px); /* 상단 고정(top: 20px)의 2배를 여백으로 사용 */
+    max-height: calc(100vh - 100px);
+    z-index: 100;
+
+    /* 본문(max-width 800px) + TOC(260px) + 좌우 여백(20px*2) = 약 1360px 이상에서만 표시 */
+    @media (max-width: 1359px) {
+      display: none;
+    }
   }
 
   .toc-header {
@@ -139,24 +125,5 @@
     display: none;
   }
 
-  /* 모바일 환경에서 TOC 숨기기 */
-  @media screen and (max-width: 768px) {
-    .toc {
-      display: none;
-    }
-
-    .content {
-      flex-direction: column;
-    }
-
-    .main {
-      width: 100%;
-      max-width: 100%; /* 모바일 환경에서 본문 너비를 브라우저 폭에 맞춤 */
-      margin: 0;
-    }
-
-    .sidebar {
-      margin: 0;
-    }
-  }
+  /* 모바일 환경(768px 이하)은 1359px 미만 조건에 포함되어 TOC가 자동으로 숨겨짐 */
 }
