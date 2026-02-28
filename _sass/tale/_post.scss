@@ -75,7 +75,8 @@
   //ToC: div.content 외부의 고정 위치 독립 패널
   .toc {
     position: fixed;
-    right: 20px;
+    /* 본문(max-width 800px)의 오른쪽 끝에서 20px 간격으로 고정: 50% + 400px(본문 절반) + 20px(여백) */
+    left: calc(50% + 420px);
     top: 80px;
     width: 260px;
     background-color: #f9f9f9;

@@ -33,6 +33,15 @@ if (window.innerWidth > 768) {
           item.classList.add('toc-item--hidden');
         }
       });
+      // 모든 하위 항목이 숨겨진 빈 toc-sublist도 함께 숨김
+      tocNav.querySelectorAll('.toc-sublist').forEach(function (sublist) {
+        var allHidden = Array.from(sublist.children).every(function (child) {
+          return child.classList.contains('toc-item--hidden');
+        });
+        if (allHidden) {
+          sublist.classList.add('toc-item--hidden');
+        }
+      });
     }
   });
 }
