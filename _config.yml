@@ -44,7 +44,7 @@ disqus:         jekyll-tale
 # ToC
 toc:
   min_level: 1
-  max_level: 2
+  max_level: 6
   no_toc_section_class: 'no-toc'
   list_class: 'toc-list'
   item_class: 'toc-item'

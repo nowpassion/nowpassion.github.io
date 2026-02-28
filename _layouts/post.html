@@ -28,9 +28,14 @@ layout: default
 
     <div class="sidebar">
       {% if page.toc %}
-        <nav class="toc">
-          <h3>Table of Contents</h3>
-          {% toc %} 
+        <nav class="toc" data-toc-depth="{{ page.toc_depth | default: 6 }}">
+          <div class="toc-header">
+            <h3>목차</h3>
+            <button class="toc-toggle" aria-label="목차 접기">▲</button>
+          </div>
+          <div class="toc-body">
+            {% toc %}
+          </div>
         </nav>
       {% endif %}
     </div>
@@ -38,6 +43,10 @@ layout: default
   </div>
   
 </div>
+
+{% if page.toc %}
+  <script src="{{ "/assets/js/toc.js" | relative_url }}"></script>
+{% endif %}
 
 {% if page.comments %}
   {% include disqus_comments.html %}
